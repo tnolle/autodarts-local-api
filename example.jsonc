@@ -1,0 +1,43 @@
+[
+  // Example of a "Throw detected" event with two throws in memory.
+  {
+    // Whether the board is connected to the Autodarts servers.
+    "connected": true,
+    // The event type. See EventType enum in `main.py`.
+    "event": "Throw detected",
+    // The number of throws in memory.
+    "numThrows": 2,
+    // Whether the detection loop is running or has been stopped (there is a sleep timer of 15 minutes).
+    "running": true,
+    // The state of the board. See StatusType enum in `main.py`.
+    "status": "Throw",
+    // The list of throws in memory. This field will be ommited if `numThrows` is 0.
+    // The last entry in the list is the latest throw that was detected.
+    "throws": [
+      {
+        "segment": {
+          // One of: SingleInner, SingleOuter, Double, Triple, Outside
+          "bed": "SingleInner",
+          // The multiplier of the segment: 0, 1, 2, or 3
+          "multiplier": 1,
+          // The canonical name of the segment.
+          "name": "S20",
+          // The number of the segment.
+          "number": 20
+        }
+      },
+      {
+        "segment": {
+          // One of: SingleInner, SingleOuter, Double, Triple, Outside
+          "bed": "Triple",
+          // The multiplier of the segment: 0, 1, 2, or 3
+          "multiplier": 3,
+          // The canonical name of the segment.
+          "name": "T5",
+          // The number of the segment.
+          "number": 5
+        }
+      }
+    ]
+  }
+]
